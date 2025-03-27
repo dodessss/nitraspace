@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odkazy</title>
+    <style>
+        body {
+            background-color: D3D3D3;
+            color: black;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+        .menu-icon::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s ease-in-out;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+        }
+        .menu-icon:hover::after {
+            width: 100%;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 10px 15px;
+            position: relative;
+        }
+        .menu a::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s ease-in-out;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .menu a:hover::after {
+            width: 100%;
+        }
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin-top: 50px;
+        }
+        .link {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            position: relative;
+            padding: 10px 0;
+            font-size: 22px;
+            transition: color 0.3s;
+        }
+        .link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s ease-in-out;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .link:hover::after {
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">≡</div>
+    <div id="menu" class="menu">
+        <a href="#">Domov</a>
+        <a href="#">O mne</a>
+        <a href="#">Kontakt</a>
+    </div>
+    <div class="link-container">
+        <a href="#" class="link">01-Tellonym</a>
+        <a href="#" class="link">02-Discord</a>
+        <a href="#" class="link">03-Telegram</a>
+    </div>
+</body>
+</html>
